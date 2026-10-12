@@ -134,7 +134,7 @@ def wait_ready(token, container_id, tries=20):
     raise RuntimeError(f"컨테이너 {container_id} 준비 시간 초과")
 
 
-def publish_carousel(token, image_urls, text, comment):
+def publish_carousel(token, image_urls, text):
     children = []
     for url in image_urls:
         children.append(api_post("me/threads", token, media_type="IMAGE", image_url=url, is_carousel_item="true"))
@@ -144,12 +144,22 @@ def publish_carousel(token, image_urls, text, comment):
     wait_ready(token, carousel)
     post_id = api_post("me/threads_publish", token, creation_id=carousel)
     print(f"[PUBLISHED] 카드 {len(children)}장 게시 (post id: {post_id})")
-
-    reply = api_post("me/threads", token, media_type="TEXT", text=comment, reply_to_id=post_id)
-    time.sleep(5)
-    reply_id = api_post("me/threads_publish", token, creation_id=reply)
-    print(f"[PUBLISHED] 첫 댓글 링크 등록 (comment id: {reply_id})")
     return post_id
+
+
+def publish_reply(token, post_id, comment, tries=3):
+    """첫 댓글은 실패해도 본 게시물을 다시 올리지 않도록 여기서 오류를 삼킨다."""
+    for n in range(1, tries + 1):
+        try:
+            time.sleep(10 * n)  # 방금 올린 게시물이 조회되기까지 잠깐 걸린다
+            reply = api_post("me/threads", token, media_type="TEXT", text=comment, reply_to_id=post_id)
+            wait_ready(token, reply)
+            reply_id = api_post("me/threads_publish", token, creation_id=reply)
+            print(f"[PUBLISHED] 첫 댓글 링크 등록 (comment id: {reply_id})")
+            return reply_id
+        except Exception as e:  # noqa: BLE001
+            print(f"[WARN] 첫 댓글 실패 {n}/{tries}: {e}")
+    return None
 
 
 def main():
@@ -169,6 +179,7 @@ def main():
 
     now = datetime.now(KST)
     jobs = load_queue(state)
+    posted_any = failed = False
     for item in items:
         if item["guid"] in state["seen"]:
             continue
@@ -190,14 +201,30 @@ def main():
             print(f"[TEST_MODE] {job['folder']} 초안을 drafts.txt 에 저장 ({len(text)}자, 카드 {len(urls)}장)")
             continue
 
-        post_id = publish_carousel(token, urls, text, comment)
+        if posted_any:
+            time.sleep(30)  # 연달아 올릴 때 간격을 둔다
+        try:
+            post_id = publish_carousel(token, urls, text)
+        except Exception as e:  # noqa: BLE001
+            # 게시 전 단계에서 실패한 것이라 다음 실행에서 다시 시도해도 중복되지 않는다
+            print(f"[ERROR] {job['folder']} 게시 실패, 다음 실행에서 재시도: {e}")
+            failed = True
+            continue
+        # 게시가 끝나면 댓글보다 먼저 기록한다 (댓글 오류로 같은 글을 두 번 올리지 않도록)
         state["seen"].append(item["guid"])
         state["posted"][job["folder"]] = {"blog": item["url"], "post_id": post_id, "at": now.isoformat(timespec="seconds")}
         jobs.remove(job)
         save_state(state)
+        posted_any = True
+        if publish_reply(token, post_id, comment) is None:
+            state["posted"][job["folder"]]["reply"] = "failed"
+            save_state(state)
+            failed = True
 
     state["seen"] = state["seen"][-200:]
     save_state(state)
+    if failed:
+        sys.exit("일부 게시가 실패했습니다. 위 [ERROR]/[WARN] 줄을 확인하세요.")
 
 
 if __name__ == "__main__":
