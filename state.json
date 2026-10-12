@@ -12,13 +12,25 @@
     "https://blog.naver.com/small_tip_plz/224435387374",
     "https://blog.naver.com/small_tip_plz/224435404340",
     "https://blog.naver.com/small_tip_plz/224437174814",
-    "https://blog.naver.com/small_tip_plz/224438367278"
+    "https://blog.naver.com/small_tip_plz/224438367278",
+    "https://blog.naver.com/small_tip_plz/224439224376",
+    "https://blog.naver.com/small_tip_plz/224439315649"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
       "blog": "https://blog.naver.com/small_tip_plz/224438367278",
       "post_id": "18134477362676969",
       "at": "2026-10-12T22:11:32+09:00"
+    },
+    "261012_서산_금호전기": {
+      "blog": "https://blog.naver.com/small_tip_plz/224439224376",
+      "post_id": "17907074850575484",
+      "at": "2026-10-12T22:20:22+09:00"
+    },
+    "261012_LG이노텍": {
+      "blog": "https://blog.naver.com/small_tip_plz/224439315649",
+      "post_id": "17958780483248569",
+      "at": "2026-10-12T22:20:22+09:00"
     }
   }
 }
