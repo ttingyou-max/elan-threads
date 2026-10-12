@@ -83,7 +83,9 @@ def match_job(item, jobs):
     cands = [j for j in jobs if j["date"] == item["date"] and (fmt is None or j["format"] == fmt)]
     if not cands:
         return None
-    by_keyword = [j for j in cands if j.get("keyword") and j["keyword"] in item["title"].replace(" ", "")]
+    title = item["title"].replace(" ", "")
+    # 종목이 둘이면 keyword 가 "서산_금호전기" 이므로 하나라도 제목에 있으면 같은 글로 본다
+    by_keyword = [j for j in cands if any(k and k in title for k in j.get("keyword", "").split("_"))]
     pool = by_keyword or cands
     return min(pool, key=lambda j: j.get("queued_at", ""))
 
