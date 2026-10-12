@@ -1,0 +1,4 @@
+.env
+drafts.txt
+__pycache__/
+.claude/
