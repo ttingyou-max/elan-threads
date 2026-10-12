@@ -4,6 +4,12 @@ on:
   schedule:
     - cron: '*/30 * * * *'  # 30분마다 블로그 새 글 확인
   workflow_dispatch:  # 수동 실행 버튼
+  push:  # 새 카드나 코드가 올라오면 바로 한 번 확인
+    branches: [main]
+    paths:
+      - 'queue/**'
+      - 'elan_poster.py'
+      - '.github/workflows/elan_cron.yml'
 
 permissions:
   contents: write  # state.json 커밋
