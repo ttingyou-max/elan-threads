@@ -64,7 +64,7 @@ def main():
 
     if "--no-push" in sys.argv:
         return
-    git("pull", "--rebase", "-q")
+    git("pull", "--rebase", "--autostash", "-q")  # 카드를 다시 넣을 때 바뀐 파일이 있어도 받아온다
     git("add", "queue")
     git("commit", "-q", "-m", f"queue: {job.name}")
     git("push", "-q")
