@@ -15,7 +15,8 @@
     "https://blog.naver.com/small_tip_plz/224438367278",
     "https://blog.naver.com/small_tip_plz/224439224376",
     "https://blog.naver.com/small_tip_plz/224439315649",
-    "https://blog.naver.com/small_tip_plz/224440462421"
+    "https://blog.naver.com/small_tip_plz/224440462421",
+    "https://blog.naver.com/small_tip_plz/224440503942"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
@@ -37,6 +38,11 @@
       "blog": "https://blog.naver.com/small_tip_plz/224440462421",
       "post_id": "18115222853043726",
       "at": "2026-10-13T17:43:32+09:00"
+    },
+    "261013_서산": {
+      "blog": "https://blog.naver.com/small_tip_plz/224440503942",
+      "post_id": "17906644854665894",
+      "at": "2026-10-13T18:43:31+09:00"
     }
   }
 }
