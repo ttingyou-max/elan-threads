@@ -14,7 +14,8 @@
     "https://blog.naver.com/small_tip_plz/224437174814",
     "https://blog.naver.com/small_tip_plz/224438367278",
     "https://blog.naver.com/small_tip_plz/224439224376",
-    "https://blog.naver.com/small_tip_plz/224439315649"
+    "https://blog.naver.com/small_tip_plz/224439315649",
+    "https://blog.naver.com/small_tip_plz/224440462421"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
@@ -31,6 +32,11 @@
       "blog": "https://blog.naver.com/small_tip_plz/224439315649",
       "post_id": "17958780483248569",
       "at": "2026-10-12T22:20:22+09:00"
+    },
+    "261013_SK하이닉스_삼성전자": {
+      "blog": "https://blog.naver.com/small_tip_plz/224440462421",
+      "post_id": "18115222853043726",
+      "at": "2026-10-13T17:43:32+09:00"
     }
   }
 }
