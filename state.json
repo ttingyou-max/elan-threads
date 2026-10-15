@@ -19,7 +19,8 @@
     "https://blog.naver.com/small_tip_plz/224440503942",
     "https://blog.naver.com/small_tip_plz/224441773074",
     "https://blog.naver.com/small_tip_plz/224441824363",
-    "https://blog.naver.com/small_tip_plz/224442809898"
+    "https://blog.naver.com/small_tip_plz/224442809898",
+    "https://blog.naver.com/small_tip_plz/224442958214"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
@@ -61,6 +62,11 @@
       "blog": "https://blog.naver.com/small_tip_plz/224442809898",
       "post_id": "18076429175463678",
       "at": "2026-10-15T18:24:42+09:00"
+    },
+    "261015_듀켐바이오": {
+      "blog": "https://blog.naver.com/small_tip_plz/224442958214",
+      "post_id": "17922033732451763",
+      "at": "2026-10-15T20:21:51+09:00"
     }
   }
 }
