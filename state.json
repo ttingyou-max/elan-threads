@@ -18,7 +18,8 @@
     "https://blog.naver.com/small_tip_plz/224440462421",
     "https://blog.naver.com/small_tip_plz/224440503942",
     "https://blog.naver.com/small_tip_plz/224441773074",
-    "https://blog.naver.com/small_tip_plz/224441824363"
+    "https://blog.naver.com/small_tip_plz/224441824363",
+    "https://blog.naver.com/small_tip_plz/224442809898"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
@@ -55,6 +56,11 @@
       "blog": "https://blog.naver.com/small_tip_plz/224441824363",
       "post_id": "17972081016170507",
       "at": "2026-10-14T21:24:31+09:00"
+    },
+    "ISSUE_261015_코스피급락": {
+      "blog": "https://blog.naver.com/small_tip_plz/224442809898",
+      "post_id": "18076429175463678",
+      "at": "2026-10-15T18:24:42+09:00"
     }
   }
 }
