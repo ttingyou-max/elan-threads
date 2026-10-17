@@ -22,7 +22,24 @@
     "https://blog.naver.com/small_tip_plz/224442809898",
     "https://blog.naver.com/small_tip_plz/224442958214",
     "https://blog.naver.com/small_tip_plz/224444120440",
-    "https://blog.naver.com/small_tip_plz/224443849768"
+    "https://blog.naver.com/small_tip_plz/224443849768",
+    "https://blog.naver.com/elan_note/222650543219",
+    "https://blog.naver.com/elan_note/224390205629",
+    "https://blog.naver.com/elan_note/224391385977",
+    "https://blog.naver.com/elan_note/224432091712",
+    "https://blog.naver.com/elan_note/224433286048",
+    "https://blog.naver.com/elan_note/224433299242",
+    "https://blog.naver.com/elan_note/224434417923",
+    "https://blog.naver.com/elan_note/224434494857",
+    "https://blog.naver.com/elan_note/224434903093",
+    "https://blog.naver.com/elan_note/224435387374",
+    "https://blog.naver.com/elan_note/224435404340",
+    "https://blog.naver.com/elan_note/224437174814",
+    "https://blog.naver.com/elan_note/224438367278",
+    "https://blog.naver.com/elan_note/224439224376",
+    "https://blog.naver.com/elan_note/224439315649",
+    "https://blog.naver.com/elan_note/224440462421",
+    "https://blog.naver.com/elan_note/224440503942"
   ],
   "posted": {
     "ISSUE_261011_호남반도체클러스터": {
@@ -79,6 +96,11 @@
       "blog": "https://blog.naver.com/small_tip_plz/224443849768",
       "post_id": "18037054670899286",
       "at": "2026-10-16T23:01:30+09:00"
+    },
+    "ISSUE_261012_CXMT_D램추격": {
+      "blog": "https://blog.naver.com/elan_note/224439224376",
+      "post_id": "18107622464615225",
+      "at": "2026-10-17T14:11:52+09:00"
     }
   }
 }
